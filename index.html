@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arqui</title>
+  <link rel="stylesheet" href="styles/estilos.css" />
+<style>
+    body {
+      background-color: #1a1a1a; /* Fondo oscuro para el cuerpo */
+      color: white; /* Letras blancas por defecto */
+    }
+
+    .encabezado {
+      background-color: #333333; /* Tono oscuro para el encabezado */
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .encabezado img {
+      position: absolute;
+      top: 10px;
+      height: 60px;
+    }
+
+    .encabezado img.izquierda {
+      left: 20px;
+    }
+
+    .encabezado img.derecha {
+      right: 20px;
+    }
+
+    .contenedor-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .menu-item {
+      text-align: center;
+    }
+
+    .menu-item h2 {
+      background-color: #00008b; /* Azul rey para los menús */
+      color: rgb(255, 255, 255);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu-item h2:hover {
+      background-color: #0000cd; /* Un tono más claro de azul rey al pasar el mouse */
+    }
+
+    /* ********** INICIO: REGLAS PARA HACERLO DESPLEGABLE ********** */
+    .submenu {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 10px;
+      /* OCULTA EL CONTENIDO Y HACE LA ANIMACIÓN */
+      max-height: 0; 
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+    
+    .submenu.activo {
+      /* MUESTRA EL CONTENIDO CUANDO SE ACTIVA LA CLASE */
+      max-height: 500px; 
+      opacity: 1;
+    }
+    /* ********** FIN: REGLAS PARA HACERLO DESPLEGABLE ********** */
+
+    .submenu li {
+      margin: 6px 0;
+    }
+
+    .submenu a {
+      text-decoration: none;
+      color: white; /* Letras blancas en los submenús */
+    }
+
+    .submenu a:hover {
+      color: #4CAF50;
+    }
+
+    .portada {
+      background-color: #2a2a2a; /* Fondo oscuro para la sección de portada */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .portada img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-personalizado {
+      background-color: #333; /* Color oscuro para el footer */
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .modal-contenido {
+      background-color: #333; /* Fondo oscuro para el modal */
+      color: white;
+    }
+
+    .boton-info {
+        background-color: #00008b; /* Azul rey para el botón de info */
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="imagenes/tecnm.png" alt="Logo TecNM" class="izquierda" />
+    <div>
+      <h1>Tecnológico Nacional de México</h1>
+      <h2>Instituto Tecnológico de Saltillo</h2>
+    </div>
+    <img src="imagenes/its2.png" alt="Logo ITS" class="derecha" />
+  </header>
+
+  <main>
+    <section class="portada">
+      <img src="imagenes/portada.jpg" alt="Imagen de portada" />
+    </section>
+
+    <div class="contenedor-menu">
+
+      <div class="menu-item" id="unidades">
+        <h2>Unidades</h2>
+        <ul class="submenu">
+          <li><a href="unidad/unidad1.html">Unidad 1</a></li>
+          <li><a href="unidad/unidad2.html">Unidad 2</a></li>
+          <li><a href="unidad/unidad3.html">Unidad 3</a></li>
+          <li><a href="unidad/unidad4.html">Unidad 4</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-item" id="temario">
+        <h2>Temarios</h2>
+        <ul class="submenu">
+          <li><a href="temarios/temario1.html">Unidad 1</a></li>
+          <li><a href="temarios/temario2.html">Unidad 2</a></li>
+          <li><a href="temarios/temario3.html">Unidad 3</a></li>
+          <li><a href="temarios/temario4.html">Unidad 4</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-item" id="practicas">
+        <h2>Prácticas</h2>
+        <ul class="submenu">
+          <li><a href="practicas/practica1.html">Práctica 1</a></li>
+          <li><a href="practicas/practica2.html">Práctica 2</a></li>
+          <li><a href="practicas/practica3.html">Práctica 3</a></li>
+          <li><a href="practicas/practica4.html">Práctica 4</a></li>
+          <li><a href="practicas/procesadores.html">Procesadores</a></li>
+          <li><a href="practicas/diseños.html">Diseño de los equipos de computo</a></li>
+          <li><a href="practicas/cotizaciones.html">Cotizaciones de los equipos de computo</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-item" id="pagina-oficial">
+        <h2><a href="https://saltillo.tecnm.mx/" target="_blank" style="color:white; text-decoration:none;">Página Oficial</a></h2>
+      </div>
+    </div>
+  </main>
+
+ <footer class="footer-personalizado">
+  <p>Arquitectura de computadoras<br>      
+    Angela Penélope Marín López</p>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtiene todos los títulos de los menús (Unidades, Temarios, Prácticas)
+        const menuHeaders = document.querySelectorAll('.menu-item h2');
+
+        menuHeaders.forEach(header => {
+            // Ignorar el header "Página Oficial" ya que tiene un enlace directo
+            if (header.parentElement.id !== 'pagina-oficial') {
+                header.addEventListener('click', function() {
+                    // Selecciona la lista ul.submenu inmediatamente después del h2
+                    const submenu = this.nextElementSibling;
+                    
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        // Alterna la clase 'activo' para mostrar u ocultar el submenú
+                        submenu.classList.toggle('activo');
+                    }
+                });
+            }
+        });
+
+        // Funciones para el Modal (Aunque no está en tu código, las incluimos por si las necesitas)
+        window.abrirModal = function() {
+            const modal = document.getElementById('miModal');
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+        window.cerrarModal = function() {
+            const modal = document.getElementById('miModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+    });
+  </script>
+</body>
+</html>
