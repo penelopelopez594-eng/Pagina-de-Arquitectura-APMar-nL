@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unidad 4 - Procesamiento paralelo</title>
+  <link rel="stylesheet" href="../styles/estilos.css" />
+  <style>
+    body {
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #0d0c0c;
+    }
+
+    h1 {
+      text-align: center;
+      color: #100791;
+      margin-bottom: 40px;
+    }
+
+    h2, h3 {
+      color: #100791;
+      margin-top: 30px;
+    }
+
+    p {
+      color: #f5f5f5;
+      margin-bottom: 30px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 30%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Unidad 4 - Procesamiento paralelo</h1>
+
+  <h2>4.1 Aspectos básicos de la computación paralela</h2>
+  <p>La computación paralela consiste en descomponer un problema en partes más pequeñas para resolverlas al mismo tiempo mediante varios recursos de cómputo. Este enfoque mejora la velocidad y eficiencia del procesamiento frente a los métodos secuenciales clásicos. Entre sus componentes clave se encuentran la coordinación de tareas, la comunicación entre procesos y el uso adecuado de los recursos disponibles.</p>
+                  <img src="../imagenes/23.png" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+  <h2>4.2 Tipos de computación paralela</h2>
+  <p>La computación paralela se presenta en diversas formas, adaptándose a distintos contextos y necesidades. Entre los enfoques más habituales se encuentran el paralelismo a nivel de bit, de instrucción, de datos y de tareas. Cada uno de ellos se distingue por la manera en que se fragmentan y procesan tanto las tareas como los datos involucrados.</p>
+  
+  <h3>4.2.1 Clasificación</h3>
+  <p>La computación paralela puede clasificarse según la manera en que se distribuyen las tareas y los datos, así como por la forma en que los procesos paralelos se comunican y coordinan entre sí. Entre las clasificaciones más comunes se encuentran el paralelismo a nivel de bit, de instrucción, de datos y de tarea</p>
+
+  <h3>4.2.2 Arquitectura de computadoras secuenciales</h3>
+  <p>La arquitectura de computadores secuencial hace referencia a los sistemas informáticos tradicionales en los cuales las instrucciones del programa se ejecutan una tras otra, siguiendo un orden lineal y predefinido. En este tipo de arquitectura, solo se procesa una instrucción a la vez, lo que implica que no se aprovechan múltiples unidades de procesamiento para ejecutar tareas simultáneamente. Aunque esta forma de procesamiento puede resultar menos eficiente frente a sistemas paralelos cuando se trata de tareas intensivas o de gran volumen, sigue siendo ampliamente utilizada debido a su simplicidad, facilidad de implementación y compatibilidad con una gran cantidad de software existente. Por esta razón, aún es común encontrar arquitecturas secuenciales en computadoras personales, estaciones de trabajo, dispositivos embebidos y otros entornos donde no se requiere un alto grado de paralelismo.</p>
+
+  <h3>4.2.3 Organización de direcciones de memoria</h3>
+  <p>La organización de direcciones de memoria en un sistema de computación paralela se refiere al modo en que se estructuran, asignan y acceden las ubicaciones de memoria durante la ejecución de procesos concurrentes. Esta organización es fundamental para el rendimiento y la eficiencia del sistema, ya que determina cómo los distintos procesadores o núcleos interactúan con los datos. En este contexto, se deben considerar distintos esquemas de memoria, como la memoria compartida, en la cual todos los procesadores acceden a un espacio común de direcciones, y la memoria distribuida, donde cada procesador posee su propia memoria local y la comunicación entre ellos se realiza mediante el intercambio de mensajes. Además, se implementan diversas técnicas de direccionamiento para facilitar el acceso eficiente y coherente a los datos, como el direccionamiento directo, indirecto o por bloques. Elegir la organización adecuada depende del tipo de aplicación, la arquitectura del sistema y los objetivos de rendimiento.</p>
+                     <img src="../imagenes/24.png" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+  <h2>4.3 Sistemas de memoria (compartida). Multiprocesadores</h2>
+  <p>Los sistemas de memoria compartida representan un enfoque en computación paralela donde varios procesadores acceden a una misma región de memoria común. Esta característica facilita el intercambio de datos y la comunicación entre procesadores de forma eficiente. Dentro de este tipo de sistemas, se distinguen principalmente dos clases de redes: las redes de medio compartido y las redes conmutadas.</p>
+  
+  <h3>4.3.1 Redes de interconexión dinámicas o indirectas</h3>
+  <p>Explica qué son estas redes y cómo funcionan en sistemas multiprocesadores.</p>
+
+  <h3>4.3.2 Redes conmutadas</h3>
+  <p>Las redes de medio compartida son una arquitectura dentro de los sistemas de memoria compartida donde los procesadores están conectados físicamente a un bus común o a una red de interconexión. A través de este medio compartido, los procesadores pueden realizar operaciones de lectura y escritura en la memoria compartida.</p>
+
+  <h2>4.4 Sistemas de memoria construida. Multicomputadores</h2>
+  <p>Los sistemas de memoria distribuida son un tipo de organización en computación paralela donde cada procesador dispone de su propia memoria local. Esta estructura permite que los procesadores operen con mayor independencia y disminuye la necesidad de acceder a una memoria común compartida.</p>
+  
+  <h3>4.4.1 Redes de interconexión estáticas</h3>
+  <p>Las redes de interconexión estática son sistemas de comunicación en los que las conexiones físicas entre los nodos o procesadores son fijas y no cambian durante la operación del sistema. En estas redes, las rutas de comunicación están preestablecidas, lo que permite una transmisión de datos rápida y con baja latencia debido a la ausencia de necesidad de establecer rutas dinámicamente. Las topologías comunes para redes de interconexión estática incluyen mallas, anillos, árboles y hipercubos, cada una con características específicas para optimizar la comunicación en función del número de nodos y la distancia entre ellos. Aunque ofrecen alta predictibilidad y estabilidad, estas redes suelen ser menos flexibles y escalables en comparación con las redes de interconexión dinámica, ya que no pueden adaptarse fácilmente a cambios en la configuración o en la carga del sistema.</p>
+
+  <h2>4.5 Casos de estudio</h2>
+  <p>En el ámbito de la computación paralela, diversos casos de estudio han evidenciado la efectividad y las ventajas que ofrecen los enfoques paralelos en múltiples áreas. Entre los ejemplos más destacados se encuentran la aplicación de esta tecnología en simulaciones científicas, el procesamiento y análisis de grandes volúmenes de datos, el renderizado avanzado de gráficos y el modelado de sistemas complejos. Estos casos demuestran cómo la paralelización permite optimizar tiempos de ejecución y mejorar el rendimiento en tareas que, de otra forma, resultarían demasiado demandantes para los sistemas secuenciales tradicionales.</p>
+   <footer style="text-align:center; margin-top: 50px;">
+    <a href="../index.html" class="btn-inicio">Regresar</a>
+  </footer>
+</body>
+</html>

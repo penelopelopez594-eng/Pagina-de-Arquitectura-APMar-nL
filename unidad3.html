@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unidad 3 - Arquitectura de Computadoras</title>
+  <link rel="stylesheet" href="../styles/estilos.css" />
+  <style>
+    body {
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #0d0c0c;
+    }
+
+    h1 {
+      text-align: center;
+      color: #100791;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #100791;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #100791;
+      margin-top: 20px;
+    }
+
+    p {
+      color: #f5f5f5;
+      margin-bottom: 30px;
+      padding: 10px;
+    
+      border-radius: 6px;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Unidad 3 - Arquitectura de Computadoras</h1>
+
+  <h2>3.1 Chip set</h2>
+  <p>Un chipset es un conjunto de circuitos integrados diseñados según la arquitectura de un procesador en algunos casos formando parte integral de dicha arquitectura lo que permite que ese tipo de procesadores funcionen correctamente en una placa base Estos circuitos actúan como un intermediario para comunicar los distintos componentes de la placa como la memoria las tarjetas de expansión puertos USB ratón teclado entre otros Las placas base actuales normalmente incluyen dos chips llamados puente norte y puente sur siendo estos algunos de los circuitos integrados más grandes después del procesador gráfico y la CPU En las placas base más recientes el puente norte no está presente porque los procesadores modernos lo tienen incorporado.</p>
+  <p>En cuanto a su funcionamiento el chipset posibilita que la placa base opere como el núcleo del sistema proporcionando soporte a varios componentes y conectándolos para que puedan intercambiar información utilizando diferentes buses Es uno de los pocos elementos que tiene conexión directa con el procesador y se encarga de manejar la mayoría de los datos que entran y salen a través del bus principal del procesador del sistema gráfico y en muchas ocasiones de la memoria RAM En las computadoras personales la arquitectura del chipset es abierta y modular lo que significa que debe ofrecer interfaces estándar para conectar otros dispositivos Esto facilita la selección de distintos dispositivos compatibles por ejemplo en lo que respecta a buses de expansión algunas placas pueden tener PCI-Express y ser compatibles con tarjetas de diferentes anchos como 1x 8x o 16x.</p>
+            <img src="../imagenes/17.jpg" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+  <h3>3.1.1 Unidad de procesamiento</h3>
+  <p>La unidad central de procesamiento o CPU es el componente principal de hardware en computadoras y dispositivos programables, encargado de interpretar las instrucciones de un programa mediante operaciones aritméticas, lógicas y procesamiento de señales externas de entrada y salida; su diseño ha evolucionado para mejorar eficiencia, potencia y reducir consumo y costo. Está formada por la unidad aritmético lógica (ALU) que realiza cálculos y operaciones lógicas, la unidad de control (CU) que gestiona el flujo de información entre registros y coordina con la ALU las instrucciones extraídas de la memoria, y por registros internos que pueden ser no accesibles (como los de instrucción, bus de datos y dirección) o de uso específico (contador de programa, puntero de pila, acumulador, banderas) y general.</p>
+               <img src="../imagenes/18.jpg" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+  <h3>3.1.2 Controlador del Bus</h3>
+  <p>El controlador del bus se ocupa de gestionar la frecuencia de operación y las señales necesarias para la sincronización, temporización y control del sistema. Este componente se encuentra integrado en un chip de la placa base. El bus actúa como el canal principal para la transmisión y recepción de datos tanto dentro del sistema como hacia el exterior, funcionando únicamente como un medio de transferencia de información entre los dispositivos conectados, sin almacenar datos en ningún momento; las señales eléctricas que transportan la información solo permanecen en el bus el tiempo necesario para desplazarse entre los dos componentes involucrados en la comunicación.</p>
+               <img src="../imagenes/20.png" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+  <h3>3.1.3 Puertas de entrada/salida</h3>
+  <p>Un puerto de entrada/salida (E/S) es un conector en una computadora que permite conectar cables para comunicar la CPU con dispositivos periféricos o redes mediante interfaces específicas. Actúa como un punto de enlace entre la computadora y dispositivos externos como ratón, impresora o módem. Existen dos tipos principales de puertos: internos, que conectan la placa base con dispositivos dentro del equipo como discos duros o módems internos; y externos, que enlazan la placa base con dispositivos fuera del equipo, como impresoras, unidades USB o ratones. Entre los tipos de puertos más comunes están el puerto serial, que transmite datos bit a bit y utiliza conectores de 9 o 25 pines; el puerto USB, estándar universal para conectar una gran variedad de dispositivos digitales; el puerto PS/2, un conector de 6 pines usado tradicionalmente para teclado y ratón pero ahora casi obsoleto; el puerto de infrarrojos, que permite intercambio inalámbrico de datos a corta distancia mediante haces de luz; el puerto Bluetooth, que facilita conexiones inalámbricas de corto alcance entre dispositivos compatibles; y el puerto FireWire, estándar de Apple para comunicación rápida especialmente en dispositivos de audio y video como videocámaras digitales.</p>
+
+  <h3>3.1.4 Controlador de interrupciones</h3>
+  <p>El controlador de interrupciones es un componente que administra las señales de interrupción de los dispositivos de entrada y salida para el procesador, evitando la necesidad de circuitos adicionales y facilitando la expansión del sistema al manejar múltiples interrupciones priorizadas. Cuando una línea de interrupción se activa, el controlador notifica a la CPU mediante la señal INTR, y al recibir esta alerta, la CPU inicia un ciclo de reconocimiento enviando un pulso INTA. El controlador evalúa las interrupciones recibidas, selecciona la de mayor prioridad y envía otro pulso INTA para colocar en el bus el vector de interrupción correspondiente. La CPU, con este vector, obtiene la dirección de la rutina que debe ejecutar, guarda el estado actual, deshabilita nuevas interrupciones y comienza a ejecutar la rutina asociada.</p>
+                  <img src="../imagenes/21.jpg" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+
+  <h3>3.1.5 Controlador de acceso directo a memoria (DMA)</h3>
+  <p>El acceso directo a memoria (DMA) es gestionado por un circuito especializado llamado controlador DMA (DMAC), que facilita la transferencia de datos entre dispositivos y memoria sin requerir la intervención constante del procesador. En las computadoras XT, este controlador estaba integrado en un chip 8237A con cuatro canales de 8 bits, capaces de mover un byte a la vez, ubicados en los puertos con direcciones 000–00Fh. Más adelante, en los sistemas AT, se incorporaron dos de estos controladores junto con líneas adicionales en el bus de control, aunque no se sumaron ocho canales, ya que el segundo controlador se conectó en cascada a la línea 4 del primero. Los canales del segundo controlador, asignados a las direcciones 0C0–0DFh, operan con 16 bits, pudiendo mover dos bytes consecutivos simultáneamente. Cada canal tiene una prioridad establecida para resolver conflictos en caso de múltiples solicitudes, donde un número menor indica mayor prioridad. Estos canales pueden ser utilizados por cualquier dispositivo compatible que requiera transferencias DMA, y aunque la asignación de canales puede variar, algunos sistemas siguen configuraciones estándar.</p>
+
+  <h3>3.1.6 Circuitos de temporización</h3>
+  <p>El circuito temporizador es uno de los componentes electrónicos más comunes tanto en la industria como en la electrónica comercial, destacando especialmente el modelo más sencillo y económico que combina una resistencia con un condensador, aunque existen muchas variantes más avanzadas. Su función principal es activar o desactivar un elemento tras un tiempo previamente definido, permitiendo controlar cuánto debe transcurrir antes de que un circuito comience a operar, se detenga o cambie el estado de un contacto. En las computadoras, este temporizador está presente en la placa base y se encarga de llevar la cuenta del tiempo utilizando el reloj interno del sistema. Sirve para medir intervalos entre eventos, generar retardos o pausas, y mantener actualizada la hora y la fecha mientras la computadora está encendida, gracias a su capacidad para realizar distintas funciones de conteo.</p>
+
+  <h3>3.1.7 Circuitos de control</h3>
+  <p>Se trata de una red secuencial que recibe un código que especifica la operación a realizar y luego avanza mediante una serie de estados, produciendo una secuencia adecuada de señales de control. Estas señales controlan operaciones como la lectura y escritura, además de gestionar las direcciones válidas en el bus de control del sistema. También se generan otras señales que se conectan a la ALU y a los registros internos del procesador, con el fin de regular el flujo de datos dentro del procesador y entre los buses de dirección y datos del sistema.</p>
+
+  <h3>3.1.8 Controladores de video</h3>
+  <p>La tarjeta de video, también conocida como controlador gráfico, es un dispositivo electrónico esencial para crear la señal de video que se envía a la pantalla mediante un cable. Generalmente está integrada en la placa base o instalada en una tarjeta de expansión. Su función es recopilar toda la información que se mostrará en el monitor y servir como intermediaria entre el procesador y la pantalla, transmitiendo los datos a través del sistema de buses. Una tarjeta gráfica está formada principalmente por un controlador de video, memoria dedicada llamada RAM de video y un generador de caracteres; hoy en día, muchas también incluyen un acelerador de gráficos para mejorar el rendimiento. El controlador de video lee periódicamente los datos almacenados en la memoria de video y los envía al monitor en forma de señal, y la cantidad de veces por segundo que se actualiza esta señal se denomina frecuencia de refresco.</p>
+
+  <h2>3.2 Aplicaciones</h2>
+
+  <h3>3.2.1 Entrada/salida</h3>
+  <p>
+  En informática, un periférico de entrada/salida (E/S) es un dispositivo que permite la comunicación bidireccional entre una computadora y el mundo exterior. Esto significa que puede tanto recibir información desde un sistema externo como enviar datos hacia él. Los dispositivos de entrada son aquellos que introducen datos a la computadora para que esta los procese.
+</p>
+
+<p>
+  La función principal de un periférico de E/S es recibir (entrada) datos para que la CPU los procese y luego enviar (salida) la información resultante. Estos dispositivos pueden leer o almacenar datos, ya sea de forma temporal o permanente, para que sean utilizados por usuarios u otros sistemas.
+</p>
+
+<p>
+  Entre los tipos de periféricos de E/S están los dispositivos de comunicación, como módems y tarjetas de red, que generalmente funcionan tanto para entrada como para salida de datos. También se incluyen los dispositivos de almacenamiento, como discos duros, unidades de estado sólido, memorias flash y disqueteras, que permiten guardar y recuperar información.
+</p>
+
+
+  <h3>3.2.2 Almacenamiento</h3>
+  <p>A medida que la tecnología avanza, se genera una gran cantidad de datos, por lo que es fundamental contar con un almacenamiento eficiente para guardar y acceder a esa información. El almacenamiento ha evolucionado desde los discos tradicionales hasta sistemas digitales conectados en red y gestionados por software. Este proceso tecnológico permite organizar, distribuir y archivar datos en bytes y bits, siendo esencial para aplicaciones, multimedia, contactos, redes y todo lo relacionado con el mundo digital.
+
+Muchas personas confunden “memoria” con “almacenamiento”, pero son conceptos distintos: la memoria (RAM) guarda datos temporalmente para procesos inmediatos, mientras que el almacenamiento guarda información a largo plazo en dispositivos como discos duros (HDD) o unidades de estado sólido (SSD). Estos dispositivos están presentes en casi todos los aparatos electrónicos, como computadoras, tablets y teléfonos, y también existen unidades externas para ampliar la capacidad de almacenamiento.</p>
+
+  <h3>3.2.3 Fuentes de alimentación</h3>
+  <p>La fuente de alimentación es un componente fundamental en cualquier dispositivo electrónico, ya que suministra la energía necesaria para que funcione. En las computadoras de escritorio, generalmente se ubica en la parte inferior o superior de la torre, a menudo en un compartimento separado para organizar y ocultar los cables. Su función principal es proveer electricidad a todos los componentes, como la placa base, procesador, tarjetas gráficas, discos duros, unidades SSD, ventiladores y lectores de CD, mediante diferentes tipos de conectores, como SATA para almacenamiento o Molex y conectores ATX para otros dispositivos. Además, las fuentes incluyen sistemas de protección para cuidar los componentes de posibles fallos eléctricos. Algunas fuentes cuentan con refrigeración pasiva, sin ventiladores propios, utilizando su alta eficiencia para disipar el calor de manera silenciosa y efectiva.</p>
+                    <img src="../imagenes/22.jpeg" alt="Descripción de la imagen" style="display: block; margin: 20px auto; max-width: 30%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+
+  <h2>3.3 Ambiente de servicio</h2>
+  <p>El negocio de ofrecer servicios de datos es considerablemente más complejo que el de los servicios tradicionales, ya que requiere nuevos conocimientos y modelos comerciales. A menudo, esto implica la colaboración con empresas externas. Por ello, es fundamental que los operadores tradicionales adapten y transformen su negocio para poder brindar servicios de datos que cumplan con los altos niveles de calidad y exigencia que demanda el mercado actual.</p>
+
+  <h3>3.3.1 Negocios</h3>
+  <p>Sin duda, la tecnología ha sido el principal motor y el factor más directo en la transformación del trabajo organizacional tras la posguerra del siglo XX. Tanto los bienes de capital tangibles —como computadoras, teléfonos, videocassettes, fax y grabadoras—, como los programas y sistemas de información y comunicación, han impulsado significativamente la productividad y eficiencia de las organizaciones. Algunos ejemplos claros son las bases de datos en redes de diversas configuraciones, los sistemas de reservaciones en aerolíneas, los sistemas de contabilidad y nóminas, los archivos clínicos en centros de salud, los sistemas de conmutación electrónica, y muchas otras aplicaciones que optimizan procesos administrativos.</p>
+
+  <h3>3.3.2 Industria</h3>
+  <p>La industrialización de los servicios de tecnología de la información transformará el mercado en cuanto a cómo las organizaciones evalúan, adquieren y seleccionan estos servicios, así como la manera en que los proveedores desarrollan y fijan sus precios. Para alcanzar esta estandarización, es necesario enfocarse en soluciones genéricas, una responsabilidad que recae en los proveedores, quienes deben desarrollar, operar y gestionar estos servicios de TI estandarizados. Aunque los servicios de TI aún están en proceso de madurez, la industria ha avanzado notablemente, especialmente en la forma en que dichos servicios se implementan y administran.</p>
+
+  <h3>3.3.3 Comercio electrónico</h3>
+  <p>El desarrollo de estas tecnologías y de las telecomunicaciones ha hecho que los intercambios de datos crezcan a niveles extraordinarios, simplificándose cada vez más y creando nuevas formas de comercio, y en este marco se desarrolla el Comercio Electrónico. Se considera “Comercio Electrónico” al conjunto de aquellas transacciones comerciales y financieras realizadas a través del procesamiento y la transmisión de información, incluyendo texto, sonido e imagen.</p>
+
+  <footer style="text-align:center; margin-top: 50px;">
+    <a href="../index.html" class="btn-inicio">Regresar</a>
+  </footer>
+
+</body>
+</html>

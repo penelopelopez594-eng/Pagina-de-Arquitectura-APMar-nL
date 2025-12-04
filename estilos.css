@@ -1,0 +1,218 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo general */
+html, body {
+  font-family: Arial, sans-serif !important;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Título principal */
+.titulo-principal {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Imagen de portada */
+.portada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portada img {
+  width: 80%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Contenedor con menús */
+.contenedor-menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+/* Cada bloque de menú */
+.menu-item {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
+
+/* Títulos de menú */
+.menu-item h2 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+/* Submenú */
+.submenu {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Submenú visible */
+.submenu.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Links del submenú */
+.submenu li a {
+  text-decoration: none;
+  color: rgb(93, 132, 173);
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+}
+
+.submenu li a:hover {
+  background-color: rgb(93, 132, 173);
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: #911a1a;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Botón "Inicio" */
+.btn-inicio {
+  color: #fff;
+  background-color: #800000;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-inicio:hover {
+  background-color: #a00000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 720px) {
+  .contenedor-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu-item {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+.footer-personalizado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #800000;
+  padding: 10px;
+}
+
+.footer-personalizado p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+}
+
+.boton-info {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #800000;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.boton-cerrar {
+  margin-top: 15px;
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
